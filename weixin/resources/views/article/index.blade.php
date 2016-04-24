@@ -20,7 +20,12 @@
 		<td>{{ $article->title }}</td>
 		<td>{{ $article->content }}</td>
 		<td><a href="{{ url('artile/show')}}/{{ $article->article_id}}">修改</a></td>
-		<td><a href="{{ url('artile/destory')}}/{{ $article->article_id}}">删除</a></td>
+		<td>
+	       {!! Form::open(['method' => 'DELETE', 'route' => ['article.destroy', $article->article_id]]) !!}
+	       <a href="javascript:;" onclick="document.forms[{{ $article->article_id - 1 }}].submit()">删除</a>
+ 
+            {!! Form::close() !!}
+		</td>
 		</tr>
 	@endforeach
 	</table>

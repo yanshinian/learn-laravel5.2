@@ -98,6 +98,11 @@ if (DB::insert('insert into wx_article (title, content) values (?, ?)', [$reques
      */
     public function destroy($id)
     {
-        //
+        
+        if (DB::delete('delete from wx_article where article_id= ? ', [$id])) {
+            return redirect('article');
+        } else {
+            echo "删除失败";
+        }
     }
 }
