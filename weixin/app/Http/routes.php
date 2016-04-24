@@ -74,12 +74,23 @@ Route::get('qrcode', function () {
     return view('qrcode');
 });
 
+// Route::get('article', "ArticleController@index");
+// Route::get('article/add', "ArticleController@add");
+// Route::get('article/delete', "ArticleController@delete");
+// Route::get('article/update', "ArticleController@update");
+// Route::post('article/add', "ArticleController@commit");
+Route::resource('article', 'ArticleController');
+Route::get('aaa', function () {
+    echo '输出文章';
+});
 
-// Route::get('qrcode', function () {
-//     return view('qrcode.index');
-// });
+ 
+Route::get('linkdb', function () {
+    echo  env('DB_DATABASE');
+    echo DB::connection()->getDatabaseName();
 
-// Route:controller()
+    var_dump($users = DB::select('select * from wx_article'));
+});
 
 
 
