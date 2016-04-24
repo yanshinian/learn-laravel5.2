@@ -50,7 +50,7 @@ class ArticleController extends Controller
         // var_dump(DB::insert('insert into wx_article (title, content) values (?, ?)', [$request->title, $request->content]));
 if (DB::insert('insert into wx_article (title, content) values (?, ?)', [$request->title, $request->content])) {
     // echo "插入成功";
-    return redirect('article/index');
+    return redirect('article');
 } else {
     echo "插入失败";
 }
