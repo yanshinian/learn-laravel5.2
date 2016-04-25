@@ -23,7 +23,6 @@
 		<td>
 	       {!! Form::open(['method' => 'DELETE', 'route' => ['article.destroy', $article->article_id]]) !!}
 	       <a href="javascript:;" onclick="document.forms[{{ $article->article_id - 1 }}].submit()">删除</a>
- 
             {!! Form::close() !!}
 		</td>
 		</tr>
